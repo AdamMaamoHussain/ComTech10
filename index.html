@@ -251,24 +251,19 @@
             margin: 0 0 10px 0;
             font-weight: 800;
             line-height: 1.1;
-            color: #e1f5fe; /* Light Blue/White Header */
-            text-shadow: 0 4px 15px rgba(13, 71, 161, 0.6);
+            color: #083b8c;
             position: relative;
             z-index: 2; 
         }
 
-        /* --- UPDATED SUBTEXT: BLACK --- */
         .section-banner p {
-            color: black; /* Changed to Black */
+            color: black;
             opacity: 1; 
             font-size: 1.4rem; 
             margin-top: 10px;
             font-weight: 600; 
             letter-spacing: 0.5px; 
-            
-            /* Text Shadow Removed for Clean Black Look */
             text-shadow: none;
-            
             position: relative;
             z-index: 2;
         }
@@ -298,6 +293,96 @@
         h3 { margin-top: 0; color: #333; }
         p { line-height: 1.7; font-size: 1.1rem; color: #666; }
 
+        /* --- SLIDESHOW STYLES --- */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 40px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #000;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: auto; /* Fixed height for consistency */
+            position: relative;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fadeEffect 1.5s;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #f2f2f2;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: var(--accent-main);
+        }
+
+        /* The dots/bullets/indicators */
+        .dot-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active-dot, .dot:hover {
+            background-color: var(--accent-main);
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
         /* --- CARDS & GRID SYSTEM --- */
         .card {
             background: white;
@@ -325,8 +410,7 @@
 
         .card img, .card video {
             width: 100%;
-            height: 220px; 
-            object-fit: cover; 
+            height: auto;
             display: block;
             background-color: #ddd;
             transition: transform 0.3s ease;
@@ -457,6 +541,7 @@
             .nav-links { flex-wrap: wrap; justify-content: center; }
             .split-grid, .about-grid { grid-template-columns: 1fr; }
             .section-banner h1 { font-size: 2.5rem; } 
+            .mySlides { height: 250px; } /* Smaller slider on mobile */
         }
     </style>
 </head>
@@ -505,16 +590,57 @@
                         This portfolio documents my journey through my Com-Tech courses and personal projects.
                     </p>
                 </div>
-                <div class="scroll-pop" style="background: var(--bg-color); padding: 25px; border-radius: 15px;">
-                    <h3 style="text-align: center;">Technical Skills</h3>
-                    <div class="skills-container">
-                        <span class="skill-tag">Adobe Photoshop</span>
-                        <span class="skill-tag">Adobe Illustrator</span>
-                        <span class="skill-tag">Premiere Pro</span>
-                        <span class="skill-tag">After Effects</span>
-                        <span class="skill-tag">Photography</span>
-                        <span class="skill-tag">Graphic Design</span>
+
+            <div class="scroll-pop">
+                <h3 style="text-align: center; margin-top: 30px; color: var(--accent-main);">All about me</h3>
+                
+                <div class="slideshow-container">
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_0.jpg" />" alt="Graphics">
+                        <div class="slide-caption">Graphic Design Explorations</div>
                     </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_01.jpg" alt="Editing">
+                        <div class="slide-caption">Video Editing Suite</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_02.jpg" alt="Abstract">
+                        <div class="slide-caption">Abstract Art & Textures</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_03.jpg" alt="UI Design">
+                        <div class="slide-caption">Web & UI Concepts</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_04.jpg" alt="Social Media">
+                        <div class="slide-caption">Social Media Assets</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_05.jpg" alt="Retro Tech">
+                        <div class="slide-caption">Technology & Design</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_06.jpg" alt="Neon">
+                        <div class="slide-caption">Color Theory Studies</div>
+                    </div>
+                    <div class="mySlides">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_07.jpg" alt="Cyberpunk">
+                        <div class="slide-caption">Futuristic Concepts</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                    <span class="dot" onclick="currentSlide(8)"></span>
                 </div>
             </div>
 
@@ -531,7 +657,7 @@
                 </div>
                 <div class="card scroll-pop" onclick="showPage('illustrator')">
                     <div class="media-wrapper">
-                        <img src="Chips.png" alt="Logo">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Chips.png" alt="Logo">
                     </div>
                     <div class="card-info">
                         <h3>Vector Art</h3>
@@ -564,7 +690,7 @@
             <div class="featured-project scroll-pop">
                 <div class="card">
                     <div class="media-wrapper">
-                        <img src="BadmintonPosterV3.jpg" alt="Main Photoshop Project">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/BadmintonPosterV3.jpg" alt="Main Photoshop Project">
                     </div>
                     
                     <div class="palette-container">
@@ -588,7 +714,7 @@
             <div class="split-grid">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="BadmintonPosterV2.jpg" alt="Sub Project 1" style="width: 75%; height: auto; margin: 0 auto; display:block;">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/BadmintonPosterV2.jpg" alt="Sub Project 1" style="width: 75%; height: auto; margin: 0 auto; display:block;">
                     </div>
                     <div class="card-info">
                         <h3>V2</h3>
@@ -596,7 +722,7 @@
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="BadmintonPosterV1.jpg" alt="Sub Project 2" style="width: 75%; height: auto; margin: 0 auto; display:block;">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/BadmintonPosterV1.jpg" alt="Sub Project 2" style="width: 75%; height: auto; margin: 0 auto; display:block;">
                     </div>
                     <div class="card-info">
                         <h3>V1</h3>
@@ -617,7 +743,7 @@
             <div class="gallery">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="https://placehold.co/600x400?text=Classwork+1" alt="Classwork 1">
+                        <img src="classwork1.jpg" alt="Classwork 1">
                     </div>
                     <div class="card-info">
                         <h3>Exercise 1</h3>
@@ -626,7 +752,7 @@
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                         <img src="https://placehold.co/600x400?text=Classwork+2" alt="Classwork 2">
+                        <img src="classwork2.jpg" alt="Classwork 2">
                     </div>
                     <div class="card-info">
                         <h3>Exercise 2</h3>
@@ -635,7 +761,7 @@
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                         <img src="https://placehold.co/600x400?text=Classwork+3" alt="Classwork 3">
+                        <img src="classwork3.jpg" alt="Classwork 3">
                     </div>
                     <div class="card-info">
                         <h3>Exercise 3</h3>
@@ -653,7 +779,7 @@
             <div class="gallery">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="Background.png" alt="Illustrator Work 1">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Background.png" alt="Illustrator Work 1">
                     </div>
                     <div class="card-info">
                         <h3>Vector Art</h3>
@@ -662,7 +788,7 @@
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="Chips.png" alt="Illustrator Work 2">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Chips.png" alt="Illustrator Work 2">
                     </div>
                     <div class="card-info">
                         <h3>Logo Design</h3>
@@ -702,7 +828,7 @@
             <div class="gallery">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                         <img src="https://placehold.co/600x400?text=Animation+Project" alt="Animation Project">
+                        <img src="animation1.gif" alt="Animation Project">
                     </div>
                     <div class="card-info">
                         <h3>Animation Demo</h3>
@@ -788,15 +914,60 @@
                         loader.classList.add('hidden');
                         document.body.classList.add('loaded');
                         setupObserver(homePage);
-                    }, 200); // Shorter wait before disappearing
+                        // Start Slideshow only after loading
+                        showSlides(slideIndex);
+                        startAutoSlide();
+                    }, 200); 
                 } else {
                     // Update UI
                     progressBar.style.width = `${progress}%`;
                     percentageText.innerText = `${Math.floor(progress)}%`;
                 }
-            }, 20); // 20ms delay per tick (Very fast updates)
+            }, 20); 
         });
+
+        // --- SLIDESHOW LOGIC ---
+        let slideIndex = 1;
+        let slideInterval;
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            resetAutoSlide(); // Reset timer on manual click
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetAutoSlide(); // Reset timer on manual click
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active-dot";
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(function() {
+                plusSlides(1);
+            }, 5000); // Change image every 5 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            startAutoSlide();
+        }
     </script>
 </body>
 </html>
-
