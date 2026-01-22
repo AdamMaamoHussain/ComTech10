@@ -218,21 +218,34 @@
             to { opacity: 1; }
         }
 
-        /* --- BANNER DESIGN --- */
+/* --- BANNER DESIGN (Soft Fading Blue in Top Right) --- */
         .section-banner {
-            background: linear-gradient(135deg, #1565c0 0%, #64b5f6 100%);
+            background-color: #ffffff;
+            
+            /* BACKGROUND LAYERS:
+               1. Grid lines (Top layer)
+               2. Vertical Grid lines
+               3. Soft Blue Gradient at Top Right
+                  - Uses rgba(21, 101, 192, 0.5) -> The 0.5 makes it 50% see-through.
+                  - Fades from 0% out to 40% (creating a soft glow instead of a hard circle).
+            */
             background-image: 
-                linear-gradient(rgba(129, 212, 250, 0.4) 1px, transparent 1px), 
-                linear-gradient(90deg, rgba(129, 212, 250, 0.4) 1px, transparent 1px);
-            background-size: 40px 40px;
-            color: #e1f5fe;
+                linear-gradient(rgba(21, 101, 192, 0.1) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(21, 101, 192, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at top right, rgba(21, 101, 192, 0.5) 0%, transparent 40%);
+            
+            background-size: 40px 40px, 40px 40px, auto;
+            background-repeat: repeat, repeat, no-repeat;
+            
+            /* Text Color: Dark Blue */
+            color: #0d47a1;
+            
             margin: -40px -40px 40px -40px;
             padding: 80px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
         .section-banner::after {
             content: '';
             position: absolute;
