@@ -16,7 +16,7 @@
             --accent-dark: #01579b;
             --shadow: 0 4px 6px rgba(0,0,0,0.1);
             --shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
-            --pop-ease: cubic-bezier(0.25, 1, 0.5, 1); 
+            --pop-ease: cubic-bezier(0.25, 1, 0.5, 1);
             
             /* Project Colors */
             --proj-orange: #ff6b00;
@@ -48,7 +48,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: white; 
+            background-color: white;
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -64,7 +64,7 @@
         }
 
         .loader-text {
-            font-size: 2rem; 
+            font-size: 2rem;
             font-weight: 800;
             color: var(--text-main);
             letter-spacing: 2px;
@@ -73,9 +73,9 @@
         }
 
         .progress-container {
-            width: 400px; 
+            width: 400px;
             max-width: 90%;
-            height: 16px; 
+            height: 16px;
             background-color: #e0e0e0;
             border-radius: 20px;
             overflow: hidden;
@@ -89,7 +89,7 @@
             background: linear-gradient(90deg, var(--accent-main), var(--accent-dark));
             border-radius: 20px;
             transition: width 0.05s linear;
-            box-shadow: 0 0 15px rgba(2, 136, 209, 0.7); 
+            box-shadow: 0 0 15px rgba(2, 136, 209, 0.7);
             position: relative;
         }
 
@@ -111,8 +111,8 @@
 
         .percentage {
             margin-top: 15px;
-            font-family: 'Courier New', monospace; 
-            font-size: 1.4rem; 
+            font-family: 'Courier New', monospace;
+            font-size: 1.4rem;
             color: var(--accent-dark);
             font-weight: bold;
         }
@@ -194,13 +194,13 @@
         }
 
         .page-section {
-            display: none; 
+            display: none;
             background: white;
             padding: 40px;
             border-radius: 15px;
             box-shadow: var(--shadow);
-            overflow: hidden; 
-            min-height: 80vh; 
+            overflow: hidden;
+            min-height: 80vh;
         }
 
         .page-section.active-page {
@@ -219,9 +219,9 @@
             background-image: 
                 linear-gradient(rgba(129, 212, 250, 0.4) 1px, transparent 1px), 
                 linear-gradient(90deg, rgba(129, 212, 250, 0.4) 1px, transparent 1px);
-            background-size: 40px 40px; 
-            color: #e1f5fe; 
-            margin: -40px -40px 40px -40px; 
+            background-size: 40px 40px;
+            color: #e1f5fe;
+            margin: -40px -40px 40px -40px;
             padding: 80px 20px;
             text-align: center;
             position: relative;
@@ -237,7 +237,7 @@
             height: 400px;
             background: radial-gradient(circle, rgba(179, 229, 252, 0.6) 0%, rgba(0,0,0,0) 70%);
             border-radius: 50%;
-            pointer-events: none; 
+            pointer-events: none;
             animation: pulseGlow 6s ease-in-out infinite alternate;
         }
 
@@ -253,16 +253,16 @@
             line-height: 1.1;
             color: #083b8c;
             position: relative;
-            z-index: 2; 
+            z-index: 2;
         }
 
         .section-banner p {
             color: black;
-            opacity: 1; 
-            font-size: 1.4rem; 
+            opacity: 1;
+            font-size: 1.4rem;
             margin-top: 10px;
-            font-weight: 600; 
-            letter-spacing: 0.5px; 
+            font-weight: 600;
+            letter-spacing: 0.5px;
             text-shadow: none;
             position: relative;
             z-index: 2;
@@ -285,7 +285,7 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 4px solid #b3e5fc; 
+            border: 4px solid #b3e5fc;
             object-fit: cover;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
@@ -293,7 +293,7 @@
         h3 { margin-top: 0; color: #333; }
         p { line-height: 1.7; font-size: 1.1rem; color: #666; }
 
-        /* --- SLIDESHOW STYLES --- */
+        /* --- UPDATED SLIDESHOW STYLES --- */
         .slideshow-container {
             max-width: 100%;
             position: relative;
@@ -301,39 +301,43 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            background: #000;
+            background: white; 
         }
 
         .mySlides {
             display: none;
             width: 100%;
-            height: auto; /* Fixed height for consistency */
+            height: auto; 
             position: relative;
+            text-align: center;
         }
 
+        /* --- UPDATED SLIDESHOW IMAGE --- */
         .mySlides img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            animation: fadeEffect 1.5s;
+            height: auto; /* Fixed height for uniformity */
+            object-fit: cover; /* Prevents distortion */
+            display: block;
         }
 
         .slide-caption {
-            position: absolute;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            color: #f2f2f2;
+            position: static; 
+            background: white;
+            color: #333; 
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-sizing: border-box;
+            border-top: 1px solid #eee;
         }
 
         /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            top: 50%;
+            top: 40%; 
             width: auto;
             padding: 16px;
             margin-top: -22px;
@@ -379,7 +383,7 @@
         }
 
         @keyframes fadeEffect {
-            from {opacity: .4} 
+            from {opacity: .4}
             to {opacity: 1}
         }
 
@@ -387,12 +391,12 @@
         .card {
             background: white;
             border-radius: 12px;
-            overflow: hidden; 
+            overflow: hidden;
             border: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: box-shadow 0.2s ease; 
+            transition: box-shadow 0.2s ease;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             cursor: pointer;
             position: relative;
         }
@@ -408,9 +412,11 @@
             position: relative;
         }
 
+        /* --- UPDATED CARD IMAGES --- */
         .card img, .card video {
             width: 100%;
-            height: auto;
+            height: auto; 
+            object-fit: cover; 
             display: block;
             background-color: #ddd;
             transition: transform 0.3s ease;
@@ -465,7 +471,6 @@
         }
 
         /* --- SLOW SCROLL POP EFFECT --- */
-        
         .scroll-pop {
             opacity: 0;
             transform: scale(0.9) translateY(50px);
@@ -477,7 +482,6 @@
             opacity: 1;
             transform: scale(1) translateY(0);
         }
-        
 
         /* --- GRID LAYOUTS --- */
         .skills-container {
@@ -487,6 +491,7 @@
             justify-content: center;
             margin-top: 20px;
         }
+
 
         .skill-tag {
             background-color: var(--accent-light);
@@ -519,6 +524,16 @@
             margin-top: 20px;
             align-items: start;
         }
+        
+        /* ------------------------------------------------ */
+        /* --- FIX: ILLUSTRATOR SPECIFIC LAYOUT (2 COL) --- */
+        /* ------------------------------------------------ */
+        #illustrator .gallery {
+            /* This forces 2 equal columns */
+            grid-template-columns: 1fr 1fr !important; 
+            /* Bigger gap between the big images */
+            gap: 40px; 
+        }
 
         .split-grid {
             display: grid;
@@ -537,12 +552,20 @@
         }
 
         @media (max-width: 768px) {
+            
             nav { flex-direction: column; gap: 15px; }
             .nav-links { flex-wrap: wrap; justify-content: center; }
             .split-grid, .about-grid { grid-template-columns: 1fr; }
-            .section-banner h1 { font-size: 2.5rem; } 
-            .mySlides { height: 250px; } /* Smaller slider on mobile */
+            .section-banner h1 { font-size: 2.5rem; }
+            
+            /* On mobile, reset Illustrator to 1 column so it's not squished */
+            #illustrator .gallery {
+                grid-template-columns: 1fr !important;
+            }
         }
+        
+        
+        
     </style>
 </head>
 <body>
@@ -582,8 +605,8 @@
                 <div class="scroll-pop">
                     <h2 style="color: var(--accent-main); border-bottom: 2px solid var(--accent-light); padding-bottom: 10px;">About Me</h2>
                     <p>
-                        Hello! I'm a grade 10 student at Lisgar Collegiate Institute with a passion for digital arts. 
-                        I enjoy turning creative concepts into reality using industry-standard software. 
+                        Hello! I'm a grade 10 student at Lisgar Collegiate Institute with a passion for digital arts.
+                        I enjoy turning creative concepts into reality using industry-standard software.
                         Whether it's editing a short film, designing a poster, or animating a character, I love the process of storytelling through visual media.
                     </p>
                     <p>
@@ -596,7 +619,7 @@
                 
                 <div class="slideshow-container">
                     <div class="mySlides">
-                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_0.jpg" />" alt="Graphics">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/ABM_0.jpg" alt="Graphics">
                         <div class="slide-caption">Graphic Design Explorations</div>
                     </div>
                     <div class="mySlides">
@@ -643,12 +666,13 @@
                     <span class="dot" onclick="currentSlide(8)"></span>
                 </div>
             </div>
+            </div>
 
             <h3 class="scroll-pop" style="text-align: center; margin-top: 50px;">Featured Highlights</h3>
             <div class="gallery">
                 <div class="card scroll-pop" onclick="showPage('photoshop')">
                     <div class="media-wrapper">
-                        <img src="BadmintonPosterV3.jpg" alt="Poster">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/BadmintonPosterV3.jpg" alt="Poster" >
                     </div>
                     <div class="card-info">
                         <h3>Latest Design</h3>
@@ -703,7 +727,7 @@
                     <div class="card-info">
                         <h3>The Masterpiece (Featured)</h3>
                         <p>
-                            This is my primary Photoshop project for the semester. 
+                            This is my primary Photoshop project for the semester.
                             Before starting my badminton tournament poster, I looked at different sports and event posters to see how designers use color, layout, and fonts to catch people’s attention. Seeing real examples helped me plan my own layout and choose bold, energetic colors that match the excitement of badminton.
                         </p>
                     </div>
@@ -739,33 +763,33 @@
                 </div>
             </div>
 
-            <h3 class="scroll-pop" style="margin-top: 40px; color: var(--accent-main);">Class Exercises</h3>
+            <h3 class="scroll-pop" style="margin-top: 40px; color: var(--accent-main);">Photoshop Projects</h3>
             <div class="gallery">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="classwork1.jpg" alt="Classwork 1">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/AdamHussain's-FoodFace.jpg" alt="Classwork 1">
                     </div>
                     <div class="card-info">
-                        <h3>Exercise 1</h3>
-                        <p>Learning the lasso tool and layers.</p>
+                        <h3>Food face</h3>
+                        <p>This project taught us how to use Photoshop layers. We learnt how to use different layer masks and use them to create a person.</p>
                     </div>
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="classwork2.jpg" alt="Classwork 2">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/AdamHussainJpgForInstagram.jpg" alt="Classwork 2">
                     </div>
                     <div class="card-info">
-                        <h3>Exercise 2</h3>
-                        <p>Experimenting with filters and color balance.</p>
+                        <h3>Instagram Post</h3>
+                        <p>This project taught us how to apply the skills we learnt from Photoshop into our everyday lives. It showed us that we can use it for social media and advertisements.</p>
                     </div>
                 </div>
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="classwork3.jpg" alt="Classwork 3">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Labroooobama.jpg" alt="Classwork 3">
                     </div>
                     <div class="card-info">
-                        <h3>Exercise 3</h3>
-                        <p>Typography and text effects.</p>
+                        <h3>Face swap</h3>
+                        <p>This project was more of a "for fun" type of project. It did teach us how to blend in different elements and to use our creative minds.</p>
                     </div>
                 </div>
             </div>
@@ -776,23 +800,45 @@
                 <h1 class="scroll-pop">Illustrator Projects</h1>
                 <p class="scroll-pop">Vector Art & Logo Design</p>
             </div>
+            
             <div class="gallery">
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
                         <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Background.png" alt="Illustrator Work 1">
                     </div>
                     <div class="card-info">
-                        <h3>Vector Art</h3>
-                        <p>Created using the Pen tool and shapes.</p>
+                        <h3>Logo V1</h3>
+                        <p>My original design was of low quality and lacked consistency. After fixing my design, I was able to make it look much better</p>
                     </div>
                 </div>
+                
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Chips.png" alt="Illustrator Work 2">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/V2%20Logo.png" alt="Illustrator Work 2">
                     </div>
                     <div class="card-info">
-                        <h3>Logo Design</h3>
-                        <p>A custom logo project.</p>
+                        <h3>Logo V2</h3>
+                        <p>This design looks simple and easy. This design has way more consistency and the colour matches. Unlike the other design, we stuck to a monotonous pattern.</p>
+                    </div>
+                </div>
+
+                <div class="card scroll-pop">
+                    <div class="media-wrapper">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Background.png" alt="New Illustrator Project 1">
+                    </div>
+                    <div class="card-info">
+                        <h3>Background</h3>
+                        <p>This is the background that I designed using Illustrator. We made a bunch of assets for a blackjack game. It took us a lot of time, but we were able to make it look very well-made.</p>
+                    </div>
+                </div>
+
+                <div class="card scroll-pop">
+                    <div class="media-wrapper">
+                        <img src="https://uploads.onecompiler.io/44aguhurz/44agtytrj/Chips.png" alt="New Illustrator Project 2">
+                    </div>
+                    <div class="card-info">
+                        <h3>Chips</h3>
+                        <p>These chips are from the blackjack game. Each chip is worth a different amount of snowflakes (Since it can't be real money). Light blue is 1, blue is 5, red is 10, green is 50, and black/yellow is 100.</p>
                     </div>
                 </div>
             </div>
@@ -806,11 +852,12 @@
             <div class="gallery">
                 <div class="card scroll-pop">
                     
-                    <video controls style="width:100%;">
-                        <source src="https://www.dropbox.com/scl/fi/lqe6q9gi38s83992imn1v/How-to-dropshot-by-Adam-Nathaniel-1.mp4?rlkey=g481ldldtdu3ij7bu07mh444n&st=a902wyxg&raw=1" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    
+                    <div class="media-wrapper">
+                        <video controls style="width:100%;">
+                            <source src="https://www.dropbox.com/scl/fi/lqe6q9gi38s83992imn1v/How-to-dropshot-by-Adam-Nathaniel-1.mp4?rlkey=g481ldldtdu3ij7bu07mh444n&st=a902wyxg&raw=1" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="card-info">
                         <h3>How to Dropshot</h3>
                         <p>A tutorial video by Adam & Nathaniel.</p>
@@ -823,121 +870,115 @@
         <section id="animation" class="page-section">
             <div class="section-banner">
                 <h1 class="scroll-pop">Animation</h1>
-                <p class="scroll-pop">Motion Graphics</p>
+                <p class="scroll-pop">Motion Graphics & 3D</p>
             </div>
             <div class="gallery">
+                
                 <div class="card scroll-pop">
                     <div class="media-wrapper">
-                        <img src="animation1.gif" alt="Animation Project">
+                        <img src="https://via.placeholder.com/800x450/0288d1/ffffff?text=Animation+Bouncing+Ball" alt="Animation Placeholder">
                     </div>
                     <div class="card-info">
-                        <h3>Animation Demo</h3>
-                        <p>A short loop created in class.</p>
+                        <h3>Bouncing Ball</h3>
+                        <p>A classic animation exercise practicing squash and stretch principles using Adobe Animate.</p>
                     </div>
                 </div>
+
+                <div class="card scroll-pop">
+                    <div class="media-wrapper">
+                        <img src="https://via.placeholder.com/800x450/002f6c/ffffff?text=Character+Rig" alt="Character Rig">
+                    </div>
+                    <div class="card-info">
+                        <h3>Character Rigging</h3>
+                        <p>Work in progress: Setting up the bone structure for a 2D character model.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2025-26 Adam Hussain | Lisgar Collegiate Institute</p>
+        <p>&copy; 2024 Adam Hussain. All Rights Reserved.</p>
+        <p>Created for Com-Tech Grade 10</p>
     </footer>
 
     <script>
-        // --- OBSERVER LOGIC ---
-        const observerOptions = {
-            threshold: 0.1 
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                } else {
-                    entry.target.classList.remove('in-view');
-                }
-            });
-        }, observerOptions);
-
-        function setupObserver(pageElement) {
-            const elements = pageElement.querySelectorAll('.scroll-pop');
-            elements.forEach(el => observer.observe(el));
-        }
-
-        // --- NAVIGATION LOGIC ---
-        function showPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(page => {
-                page.classList.remove('active-page');
-            });
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            const selectedPage = document.getElementById(pageId);
-            selectedPage.classList.add('active-page');
-            
-            const activeBtns = document.querySelectorAll(`.nav-btn[onclick*="${pageId}"]`);
-            if(activeBtns.length > 0) activeBtns[0].classList.add('active');
-            
-            observer.disconnect(); 
-            setupObserver(selectedPage);
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // --- LOADING LOGIC WITH PROGRESS BAR ---
+        // --- LOADING SCREEN SCRIPT ---
         window.addEventListener('load', function() {
-            const loader = document.getElementById('loader-wrapper');
-            const homePage = document.getElementById('home');
             const progressBar = document.getElementById('progressBar');
             const percentageText = document.getElementById('percentageText');
+            const loaderWrapper = document.getElementById('loader-wrapper');
+            const body = document.body;
             
-            let progress = 0;
-            
-            // --- FASTER SPEED SETTINGS ---
+            let width = 0;
             const interval = setInterval(() => {
-                // Randomly increase progress by 2% - 7% (Large increment = Fast)
-                progress += Math.random() * 5 + 2;
-                
-                if (progress >= 100) {
-                    progress = 100;
+                if (width >= 100) {
                     clearInterval(interval);
-                    
-                    // Update UI one last time
-                    progressBar.style.width = '100%';
-                    percentageText.innerText = '100%';
-                    
-                    // Fade out
-                    setTimeout(() => {
-                        loader.classList.add('hidden');
-                        document.body.classList.add('loaded');
-                        setupObserver(homePage);
-                        // Start Slideshow only after loading
-                        showSlides(slideIndex);
-                        startAutoSlide();
-                    }, 200); 
+                    loaderWrapper.classList.add('hidden');
+                    body.classList.add('loaded');
                 } else {
-                    // Update UI
-                    progressBar.style.width = `${progress}%`;
-                    percentageText.innerText = `${Math.floor(progress)}%`;
+                    width += 5; 
+                    progressBar.style.width = width + '%';
+                    percentageText.textContent = width + '%';
                 }
-            }, 20); 
+            }, 50); // Speed of the fake loading bar
         });
 
-        // --- SLIDESHOW LOGIC ---
+        // --- PAGE NAVIGATION ---
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active-page'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active-page');
+            
+            // Update Active Nav Button
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Find the button that calls this function (rough match)
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(pageId)) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Reset Scroll
+            window.scrollTo(0, 0);
+
+            // Re-trigger scroll animations for the new page
+            checkScroll();
+        }
+
+        // --- SCROLL ANIMATION OBSERVER ---
+        function checkScroll() {
+            const elements = document.querySelectorAll('.scroll-pop');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                if (position < windowHeight - 50) {
+                    el.classList.add('in-view');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll); // Check on load
+        
+        // --- SLIDESHOW SCRIPT ---
         let slideIndex = 1;
-        let slideInterval;
+        showSlides(slideIndex);
 
         function plusSlides(n) {
             showSlides(slideIndex += n);
-            resetAutoSlide(); // Reset timer on manual click
         }
 
         function currentSlide(n) {
             showSlides(slideIndex = n);
-            resetAutoSlide(); // Reset timer on manual click
         }
 
         function showSlides(n) {
@@ -946,27 +987,14 @@
             let dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}    
             if (n < 1) {slideIndex = slides.length}
-            
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active-dot", "");
             }
-            
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active-dot";
-        }
-
-        function startAutoSlide() {
-            slideInterval = setInterval(function() {
-                plusSlides(1);
-            }, 5000); // Change image every 5 seconds
-        }
-
-        function resetAutoSlide() {
-            clearInterval(slideInterval);
-            startAutoSlide();
         }
     </script>
 </body>
