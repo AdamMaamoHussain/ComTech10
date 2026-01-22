@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Hussain | Portfolio</title>
     <style>
+        /* ========================================
+           CSS STYLESHEET
+           ========================================
+        */
+
         /* --- THEME SETTINGS --- */
         :root {
             --bg-color: #f0f8ff;
@@ -186,7 +191,7 @@
 
         /* --- CONTENT AREA --- */
         main {
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 40px auto;
             padding: 0 20px;
             width: 100%;
@@ -248,7 +253,7 @@
 
         .section-banner h1 {
             font-size: 3.8rem;
-            margin: 0 0 10px 0;
+            margin: -10px 0 10px 0;
             font-weight: 800;
             line-height: 1.1;
             color: #083b8c;
@@ -269,10 +274,12 @@
         }
 
         .banner-img-container {
-            margin-bottom: 20px;
+            margin-bottom: -25px;
             position: relative;
             z-index: 2;
             animation: float 4s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
         }
         
         @keyframes float {
@@ -282,20 +289,17 @@
         }
 
         .banner-img-container img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 4px solid #b3e5fc;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            width: 350px; 
+            height: auto;
+            object-fit: contain;
         }
 
         h3 { margin-top: 0; color: #333; }
         p { line-height: 1.7; font-size: 1.1rem; color: #666; }
 
-        /* --- UPDATED SLIDESHOW STYLES --- */
+        /* --- SLIDESHOW STYLES --- */
         .slideshow-container {
-            max-width: 100%;
+            width: 100%; 
             position: relative;
             margin: 40px auto;
             border-radius: 12px;
@@ -312,11 +316,10 @@
             text-align: center;
         }
 
-        /* --- UPDATED SLIDESHOW IMAGE --- */
         .mySlides img {
             width: 100%;
-            height: auto; /* Fixed height for uniformity */
-            object-fit: cover; /* Prevents distortion */
+            height: auto; 
+            object-fit: cover; 
             display: block;
         }
 
@@ -337,13 +340,13 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            top: 40%; 
+            top: 45%; 
             width: auto;
             padding: 16px;
             margin-top: -22px;
             color: white;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 24px; 
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             user-select: none;
@@ -369,9 +372,9 @@
 
         .dot {
             cursor: pointer;
-            height: 12px;
-            width: 12px;
-            margin: 0 4px;
+            height: 15px; 
+            width: 15px;
+            margin: 0 5px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
@@ -380,11 +383,6 @@
 
         .active-dot, .dot:hover {
             background-color: var(--accent-main);
-        }
-
-        @keyframes fadeEffect {
-            from {opacity: .4}
-            to {opacity: 1}
         }
 
         /* --- CARDS & GRID SYSTEM --- */
@@ -412,7 +410,6 @@
             position: relative;
         }
 
-        /* --- UPDATED CARD IMAGES --- */
         .card img, .card video {
             width: 100%;
             height: auto; 
@@ -423,16 +420,16 @@
         }
 
         .card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03); 
         }
 
         .card-info {
-            padding: 25px;
+            padding: 30px; 
             background: white;
             z-index: 2;
         }
 
-        /* --- PALETTE & FLOATING BALLS --- */
+        /* --- PALETTE --- */
         .palette-container {
             display: flex;
             justify-content: center;
@@ -470,7 +467,7 @@
             100% { transform: translateY(0px); }
         }
 
-        /* --- SLOW SCROLL POP EFFECT --- */
+        /* --- SCROLL POP EFFECT --- */
         .scroll-pop {
             opacity: 0;
             transform: scale(0.9) translateY(50px);
@@ -484,61 +481,39 @@
         }
 
         /* --- GRID LAYOUTS --- */
-        .skills-container {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-
-        .skill-tag {
-            background-color: var(--accent-light);
-            color: var(--accent-main);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: transform 0.15s ease, background-color 0.15s;
-        }
-        
-        .skill-tag:hover {
-            background-color: var(--accent-main);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px; 
+            margin-top: 30px;
             align-items: start;
         }
         
-        /* ------------------------------------------------ */
-        /* --- FIX: ILLUSTRATOR SPECIFIC LAYOUT (2 COL) --- */
-        /* ------------------------------------------------ */
         #illustrator .gallery {
-            /* This forces 2 equal columns */
             grid-template-columns: 1fr 1fr !important; 
-            /* Bigger gap between the big images */
-            gap: 40px; 
+            gap: 50px; 
+        }
+
+        /* --- ANIMATION PAGE SPECIFIC STYLE (480p Size Fix) --- */
+        #animation .gallery {
+            /* Switch to a flex column to stack items */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #animation .card {
+            width: 100%;
+            /* 854px is the standard width for wide 480p video (16:9). 
+               This ensures it looks like a proper video player size. */
+            max-width: 854px; 
         }
 
         .split-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 30px;
             align-items: start;
         }
 
@@ -558,13 +533,21 @@
             .split-grid, .about-grid { grid-template-columns: 1fr; }
             .section-banner h1 { font-size: 2.5rem; }
             
-            /* On mobile, reset Illustrator to 1 column so it's not squished */
             #illustrator .gallery {
                 grid-template-columns: 1fr !important;
             }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
         
-        
+        /* Animation sizing fix */
+        .anim-fix {
+            width: 100%;
+            max-height: 600px; 
+            object-fit: contain !important;
+            background-color: #f8f8f8;
+        }
         
     </style>
 </head>
@@ -595,7 +578,7 @@
         <section id="home" class="page-section active-page">
             <div class="section-banner">
                 <div class="banner-img-container scroll-pop">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+                    <img src="https://uploads.onecompiler.io/44aguhurz/44b469ccz/AiProfile.png" alt="Profile">
                 </div>
                 <h1 class="scroll-pop">Adam Hussain</h1>
                 <p class="scroll-pop">Digital Creator | Student | Designer</p>
@@ -844,132 +827,137 @@
             </div>
         </section>
 
-        <section id="video" class="page-section">
+<section id="video" class="page-section">
             <div class="section-banner">
                 <h1 class="scroll-pop">Video Production</h1>
                 <p class="scroll-pop">Short Films & Editing</p>
             </div>
             <div class="gallery">
                 <div class="card scroll-pop">
-                    
                     <div class="media-wrapper">
                         <video controls style="width:100%;">
                             <source src="https://www.dropbox.com/scl/fi/lqe6q9gi38s83992imn1v/How-to-dropshot-by-Adam-Nathaniel-1.mp4?rlkey=g481ldldtdu3ij7bu07mh444n&st=a902wyxg&raw=1" type="video/mp4">
-                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="card-info">
-                        <h3>How to Dropshot</h3>
-                        <p>A tutorial video by Adam & Nathaniel.</p>
+                        <h3>Badminton Tutorial</h3>
+                        <p>How to drop shot. This was my first ever video made in Premiere Pro.</p>
                     </div>
                 </div>
 
+                
+                    
+                </div>
             </div>
         </section>
 
-        <section id="animation" class="page-section">
+<section id="animation" class="page-section">
             <div class="section-banner">
                 <h1 class="scroll-pop">Animation</h1>
-                <p class="scroll-pop">Motion Graphics & 3D</p>
+                <p class="scroll-pop">Motion Graphics & 2D Animation</p>
             </div>
+
             <div class="gallery">
-                
                 <div class="card scroll-pop">
-                    <div class="media-wrapper">
-                        <img src="https://via.placeholder.com/800x450/0288d1/ffffff?text=Animation+Bouncing+Ball" alt="Animation Placeholder">
+                    <div class="media-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                            src="https://player.vimeo.com/video/1157359797?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture" 
+                            allowfullscreen 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
+                        </iframe>
+                    </div>
+                    <div class="card-info">
+                        <h3>Mono the monkey</h3>
+                        <p>A story that I made with Wick Editor. It was a very difficult task to do but I was able to make a good looking animation with many different principles of animation.</p>
+                    </div>
+                </div>
+
+                <div class="card scroll-pop">
+                    <div class="media-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                            src="https://player.vimeo.com/video/1157366056?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture" 
+                            allowfullscreen 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
+                        </iframe>
                     </div>
                     <div class="card-info">
                         <h3>Bouncing Ball</h3>
-                        <p>A classic animation exercise practicing squash and stretch principles using Adobe Animate.</p>
+                        <p>The classic bouncing ball exercise, focusing on squash and stretch principles. We also added sound effects so that we would be able to make a more alive animation.</p>
                     </div>
                 </div>
 
-                <div class="card scroll-pop">
-                    <div class="media-wrapper">
-                        <img src="https://via.placeholder.com/800x450/002f6c/ffffff?text=Character+Rig" alt="Character Rig">
-                    </div>
-                    <div class="card-info">
-                        <h3>Character Rigging</h3>
-                        <p>Work in progress: Setting up the bone structure for a 2D character model.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2024 Adam Hussain. All Rights Reserved.</p>
+        <p>&copy; 2025 Adam Hussain. All Rights Reserved.</p>
         <p>Created for Com-Tech Grade 10</p>
     </footer>
 
     <script>
-        // --- LOADING SCREEN SCRIPT ---
-        window.addEventListener('load', function() {
-            const progressBar = document.getElementById('progressBar');
-            const percentageText = document.getElementById('percentageText');
-            const loaderWrapper = document.getElementById('loader-wrapper');
-            const body = document.body;
-            
-            let width = 0;
-            const interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                    loaderWrapper.classList.add('hidden');
-                    body.classList.add('loaded');
-                } else {
-                    width += 5; 
-                    progressBar.style.width = width + '%';
-                    percentageText.textContent = width + '%';
-                }
-            }, 50); // Speed of the fake loading bar
-        });
+        let width = 0;
+        const bar = document.getElementById("progressBar");
+        const txt = document.getElementById("percentageText");
+        const loader = document.getElementById("loader-wrapper");
+        const body = document.body;
 
-        // --- PAGE NAVIGATION ---
+        function updateLoader() {
+            if (width >= 100) {
+                clearInterval(interval);
+                loader.classList.add("hidden");
+                body.classList.add("loaded");
+                triggerScrollAnimations();
+            } else {
+                width++;
+                bar.style.width = width + "%";
+                txt.innerHTML = width + "%";
+            }
+        }
+        
+        const interval = setInterval(updateLoader, 15);
+
         function showPage(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page-section');
-            pages.forEach(page => page.classList.remove('active-page'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active-page');
-            
-            // Update Active Nav Button
-            const buttons = document.querySelectorAll('.nav-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Find the button that calls this function (rough match)
-            buttons.forEach(btn => {
-                if(btn.getAttribute('onclick').includes(pageId)) {
-                    btn.classList.add('active');
-                }
+            pages.forEach(page => {
+                page.classList.remove('active-page');
             });
-            
-            // Reset Scroll
-            window.scrollTo(0, 0);
 
-            // Re-trigger scroll animations for the new page
-            checkScroll();
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const activePage = document.getElementById(pageId);
+            if(activePage) {
+                activePage.classList.add('active-page');
+                window.scrollTo(0, 0);
+                setTimeout(triggerScrollAnimations, 100); 
+            }
+
+            const buttons = Array.from(document.querySelectorAll('.nav-btn'));
+            const targetBtn = buttons.find(b => b.getAttribute('onclick').includes(pageId));
+            if(targetBtn) {
+                targetBtn.classList.add('active');
+            }
         }
 
-        // --- SCROLL ANIMATION OBSERVER ---
-        function checkScroll() {
-            const elements = document.querySelectorAll('.scroll-pop');
-            const windowHeight = window.innerHeight;
-            
-            elements.forEach(el => {
-                const position = el.getBoundingClientRect().top;
-                if (position < windowHeight - 50) {
-                    el.classList.add('in-view');
-                }
-            });
+        function triggerScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const popElements = document.querySelectorAll('.scroll-pop');
+            popElements.forEach(el => observer.observe(el));
         }
         
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll); // Check on load
-        
-        // --- SLIDESHOW SCRIPT ---
         let slideIndex = 1;
         showSlides(slideIndex);
 
@@ -987,12 +975,14 @@
             let dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}    
             if (n < 1) {slideIndex = slides.length}
+            
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active-dot", "");
             }
+            
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active-dot";
         }
