@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="https://uploads.onecompiler.io/44aguhurz/44b469ccz/V2%20Logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Hussain | Portfolio</title>
@@ -122,9 +123,10 @@
             font-weight: bold;
         }
 
-        /* --- NAVIGATION --- */
+/* --- NAVIGATION --- */
         nav {
-            background-color: var(--nav-bg);
+            /* Basic Settings */
+            background-color: #ffffff; /* Needs to be white for the blue design to show */
             box-shadow: var(--shadow);
             padding: 1rem 2rem;
             position: sticky;
@@ -133,8 +135,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            /* YOUR DESIGN: Grid + Blue Corners */
+            background-image: 
+  
+            background-size: 40px 40px, 40px 40px, auto, auto;
+            background-repeat: repeat, repeat, no-repeat, no-repeat;
         }
 
+        /* --- NEW LOGO STYLING --- */
+        .nav-logo {
+            height: 8%;             /* Matches the text size nicely */
+            width: 8%;
+      /* Circle shape */
+            border: 2px solid white;  /* Clean edge */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* --- SITE TITLE (Updated for Flexbox) --- */
         .site-title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -142,12 +160,17 @@
             text-decoration: none;
             cursor: pointer;
             position: relative;
+            
+            /* UPDATED: Aligns Logo and Name side-by-side */
+            display: flex;       
+            align-items: center; 
+            gap: 12px;           /* Space between logo and name */
         }
         
         .site-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px; 
             left: 0;
             width: 0%;
             height: 2px;
@@ -156,6 +179,7 @@
         }
         .site-title:hover::after { width: 100%; }
 
+        /* --- NAV LINKS (Unchanged) --- */
         .nav-links {
             list-style: none;
             display: flex;
@@ -188,54 +212,26 @@
             color: white;
             box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
         }
-
-        /* --- CONTENT AREA --- */
-        main {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 20px;
-            width: 100%;
-            flex: 1;
-        }
-
-        .page-section {
-            display: none;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            min-height: 80vh;
-        }
-
-        .page-section.active-page {
-            display: block;
-            animation: fadeInPage 0.5s ease forwards;
-        }
-
-        @keyframes fadeInPage {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-/* --- BANNER DESIGN (Soft Fading Blue in Top Right) --- */
+        
+        
+/* --- BANNER DESIGN (Slightly Bigger Glows: 32%) --- */
         .section-banner {
             background-color: #ffffff;
             
             /* BACKGROUND LAYERS:
-               1. Grid lines (Top layer)
+               1. Horizontal Grid lines
                2. Vertical Grid lines
-               3. Soft Blue Gradient at Top Right
-                  - Uses rgba(21, 101, 192, 0.5) -> The 0.5 makes it 50% see-through.
-                  - Fades from 0% out to 40% (creating a soft glow instead of a hard circle).
+               3. Top Right Glow (Increased to 32%)
+               4. Bottom Left Glow (Increased to 32%)
             */
             background-image: 
                 linear-gradient(rgba(21, 101, 192, 0.1) 1px, transparent 1px), 
                 linear-gradient(90deg, rgba(21, 101, 192, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at top right, rgba(21, 101, 192, 0.5) 0%, transparent 40%);
+                radial-gradient(circle at top right, rgba(21, 101, 192, 0.5) 0%, transparent 32%),
+                radial-gradient(circle at bottom left, rgba(21, 101, 192, 0.5) 0%, transparent 32%);
             
-            background-size: 40px 40px, 40px 40px, auto;
-            background-repeat: repeat, repeat, no-repeat;
+            background-size: 40px 40px, 40px 40px, auto, auto;
+            background-repeat: repeat, repeat, no-repeat, no-repeat;
             
             /* Text Color: Dark Blue */
             color: #0d47a1;
@@ -565,7 +561,7 @@
     </style>
 </head>
 <body>
-
+    
     <div id="loader-wrapper">
         <div class="loader-text">Loading Adam's Portfolio...</div>
         
@@ -575,8 +571,12 @@
         <div class="percentage" id="percentageText">0%</div>
     </div>
 
-    <nav>
-        <div class="site-title" onclick="showPage('home')">Adam Hussain</div>
+<nav>
+        <div class="site-title" onclick="showPage('home')">
+            <img src="https://uploads.onecompiler.io/44aguhurz/44bdem4zw/V2%20Logo.jpg" alt="Logo" class="nav-logo">
+            <span>Adam Hussain</span>
+        </div>
+
         <ul class="nav-links">
             <li><button class="nav-btn active" onclick="showPage('home')">Home</button></li>
             <li><button class="nav-btn" onclick="showPage('photoshop')">Photoshop</button></li>
@@ -585,7 +585,8 @@
             <li><button class="nav-btn" onclick="showPage('animation')">Animation</button></li>
         </ul>
     </nav>
-
+    
+    
     <main>
 
         <section id="home" class="page-section active-page">
